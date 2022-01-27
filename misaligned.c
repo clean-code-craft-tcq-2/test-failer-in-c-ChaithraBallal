@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 
  const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
  const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
