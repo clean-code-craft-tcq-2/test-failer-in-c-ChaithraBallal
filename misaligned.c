@@ -34,7 +34,7 @@ ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* M
      strcpy(colormapping.minorColor,Minor_color);
      return colormapping;    
 }
-
+/* Testing environment */
 int main() 
 {
     int result = printColorMap();
