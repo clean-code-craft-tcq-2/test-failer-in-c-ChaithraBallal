@@ -19,15 +19,10 @@ int printColorMap()
     {
         for(j = 0; j < 5; j++) 
         {
-           PrintColorData(i,j);
+           printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
         }
     }
     return i * j;
-}
-
-Void PrintColorData(int MajorcolorIx, int MinorcolorIx)
-{
-     printf("%d | %s | %s\n", MajorcolorIx * 5 + MinorcolorIx, majorColor[MajorcolorIx], minorColor[MajorcolorIx]);
 }
 
 ColorData TestPrintColorData(int Pairnum, char Major_color, char Minor_color)
