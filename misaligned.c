@@ -25,12 +25,13 @@ int printColorMap()
     return i * j;
 }
 
-ColorData TestPrintColorData(int Pairnum, char Major_color, char Minor_color)
+ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
 {
      ColorData colormapping;
+     /*Copy the strings to their actual structure*/
      colormapping.PairNumber = Pairnum;
-     colormapping.majorColor = Major_color;
-     colormapping.minorColor = Minor_color;
+     strcpy(colormapping.majorColor,Major_color); 
+     strcpy(colormapping.minorColor,Minor_color);
      return colormapping;    
 }
 
@@ -43,8 +44,8 @@ int main()
     assert(result == 25);
     colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
     assert(colormap.PairNumber == 14);
-    assert(strcmp(colormap.majorColor,Black) == 0);
-    assert(strcmp(colormap.minorColor,Brown) == 0);
+    assert(strcmp(colormap.majorColor,"Black") == 0);
+    assert(strcmp(colormap.minorColor,"Brown") == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
