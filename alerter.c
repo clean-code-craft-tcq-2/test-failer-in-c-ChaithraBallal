@@ -4,12 +4,10 @@
 int alertFailureCount = 0;
 #define TEMPTHRESHOLD 150
 
-int networkAlertStub(float celcius) 
+int networkAlert(float celcius) 
 {
-    printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
-    // stub always succeeds and returns 200
     if(celcius <= TEMPTHRESHOLD )
     {
          return 200;
@@ -24,13 +22,13 @@ int networkAlertStub(float celcius)
 float alertInCelcius_main(float farenheit) 
 {
     float celcius_test = (farenheit - 32) * 5 / 9;
-    return celcius_test;
+    return celcius;
 }
 /*Code under test*/
 void alertInCelcius(float farenheit) 
 {
     float celcius = alertInCelcius_main(farenheit);
-    int returnCode = networkAlertStub(celcius);
+    int returnCode = networkAlert(celcius);
     if (returnCode != 200) 
     {
         // non-ok response is not an error! Issues happen in life!
@@ -40,12 +38,13 @@ void alertInCelcius(float farenheit)
         alertFailureCount += 1;
     }
 }
-
+/*Testing environment*/
 int main() 
 {
-    alertInCelcius(400.5);
+    assert((alertInCelcius_main(400.5))== 204.72);
     alertInCelcius(303.6);
     alertInCelcius(650);
+    alertInCelcius(400.5);
     printf("%d alerts failed.\n", alertFailureCount);
     assert(alertFailureCount == 3);
     printf("All is well (maybe!)\n");
