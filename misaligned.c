@@ -16,9 +16,9 @@
 ColorData PrintColorMap_test(int majorID, int minorID)
 {
     ColorData colormapping;
-    printf("%d | %s | %s\n", ((majorID * 5) + minorID + 1), majorColor[majorID], minorColor[minorID]);
+    printf("%d | %s | %s\n", (majorID * 5) + minorID, majorColor[majorID], minorColor[minorID]);
     /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = ((majorID * 5) + minorID + 1);
+     colormapping.PairNumber = (majorID * 5) + minorID ;
      strcpy(colormapping.majorColor, majorColor[majorID]); 
      strcpy(colormapping.minorColor, minorColor[minorID]);
      return colormapping;    
@@ -41,14 +41,14 @@ int printColorMap()
 int main() 
 {
     int result = printColorMap();
-    int MajorcolorIndex = 2;
+    int MajorcolorIndex = 3;
     int MinorcolorIndex = 4;
     assert(result == 25);
     ColorData colormap;
     colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
-    assert(colormap.PairNumber == 15);
+    assert(colormap.PairNumber == 19);
     assert(strcmp(colormap.minorColor,"Slate") == 0);
-    assert(strcmp(colormap.majorColor,"Black") == 0);
+    assert(strcmp(colormap.majorColor,"Yellow") == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
