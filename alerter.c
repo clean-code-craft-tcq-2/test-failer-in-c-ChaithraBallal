@@ -6,6 +6,7 @@ int alertFailureCount = 0;
 
 int networkAlert(float celcius) 
 {
+    printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
     if(celcius <= TEMPTHRESHOLD )
@@ -41,7 +42,7 @@ void alertInCelcius(float farenheit)
 /*Testing environment*/
 int main() 
 {
-    assert((alertInCelcius_main(400.5))== 204.72);
+    assert((alertInCelcius_main(400.5))== 204.72); /*Verifying the farenheit conversion*/
     alertInCelcius(303.6);
     alertInCelcius(650);
     alertInCelcius(400.5);
