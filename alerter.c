@@ -42,7 +42,6 @@ void alertInCelcius(float farenheit)
 /*Testing environment*/
 int main() 
 {
-    assert((alertInCelcius_main(400.5))== 204.7); /*Verifying the farenheit conversion*/
     alertInCelcius(303.6);
     alertInCelcius(650);
     alertInCelcius(400.5);
