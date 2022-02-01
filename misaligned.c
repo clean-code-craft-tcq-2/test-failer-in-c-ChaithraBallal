@@ -16,7 +16,7 @@
 ColorData PrintColorMap_test(int p, int q)
 {
     ColorData colormapping;
-    printf("%d | %s | %s\n", p * 5 + q, majorColor[p], minorColor[p]);
+    printf("%d | %s | %s\n", p * 5 + q, majorColor[p], minorColor[q-1]);
     /*Copy the strings to their actual structure*/
      colormapping.PairNumber = p * 5 + q;
      strcpy(colormapping.majorColor,majorColor[p]); 
