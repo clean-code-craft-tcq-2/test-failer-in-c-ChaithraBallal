@@ -21,15 +21,15 @@ int networkAlertStub(float celcius)
    
 }
 
-float alertInCelcius_test(float farenheit_test) 
+float alertInCelcius_main(float farenheit) 
 {
-    float celcius_test = (farenheit_test - 32) * 5 / 9;
+    float celcius_test = (farenheit - 32) * 5 / 9;
     return celcius_test;
 }
-
+/*Code under test*/
 void alertInCelcius(float farenheit) 
 {
-    float celcius = alertInCelcius_test(farenheit);
+    float celcius = alertInCelcius_main(farenheit);
     int returnCode = networkAlertStub(celcius);
     if (returnCode != 200) 
     {
@@ -37,7 +37,7 @@ void alertInCelcius(float farenheit)
         // let us keep a count of failures to report
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
-        alertFailureCount += 0;
+        alertFailureCount += 1;
     }
 }
 
@@ -47,7 +47,7 @@ int main()
     alertInCelcius(303.6);
     alertInCelcius(650);
     printf("%d alerts failed.\n", alertFailureCount);
-    assert(alertFailureCount == 1);
+    assert(alertFailureCount == 3);
     printf("All is well (maybe!)\n");
     return 0;
 }
