@@ -12,6 +12,18 @@
      char minorColor[5];     
  }ColorData;
 
+/*Code under test*/
+ColorData PrintColorMap_test(int p, int q)
+{
+    ColorData colormapping;
+    printf("%d | %s | %s\n", p * 5 + q, majorColor[p], minorColor[p]);
+    /*Copy the strings to their actual structure*/
+     colormapping.PairNumber = p * 5 + q;
+     strcpy(colormapping.majorColor,majorColor[p]); 
+     strcpy(colormapping.minorColor,minorColor[p]);
+     return colormapping;    
+}
+
 int printColorMap() 
 {  
     int i = 0, j = 0;
@@ -23,17 +35,6 @@ int printColorMap()
         }
     }
     return i * j;
-}
-
-ColorData PrintColorMap_test(int p, int q)
-{
-    ColorData colormapping;
-    printf("%d | %s | %s\n", p * 5 + q, majorColor[p], minorColor[p]);
-    /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = p * 5 + q;
-     strcpy(colormapping.majorColor,majorColor[p]); 
-     strcpy(colormapping.minorColor,minorColor[p]);
-     return colormapping;    
 }
 
 /*void PrintColorMap_test(int a, int b)
