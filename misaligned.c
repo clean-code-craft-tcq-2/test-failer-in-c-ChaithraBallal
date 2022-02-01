@@ -36,21 +36,21 @@ ColorData PrintColorMap_test(int p, int q)
      return colormapping;    
 }
 
-//void PrintColorMap_test(int a, int b)
-//{
-   // PrintColorMap_main(a,b);
-   // colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
-//}
+/*void PrintColorMap_test(int a, int b)
+{
+    PrintColorMap_main(a,b);
+    colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
+}
 
-//ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
-//{
-     //ColorData colormapping;
-     /*Copy the strings to their actual structure*/
-     //colormapping.PairNumber = Pairnum;
-     //strcpy(colormapping.majorColor,Major_color); 
-     //strcpy(colormapping.minorColor,Minor_color);
-     //return colormapping;    
-//}
+ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
+{
+     ColorData colormapping;
+     colormapping.PairNumber = Pairnum;
+     strcpy(colormapping.majorColor,Major_color); 
+     strcpy(colormapping.minorColor,Minor_color);
+     return colormapping;    
+}*/
+
 /* Testing environment */
 int main() 
 {
