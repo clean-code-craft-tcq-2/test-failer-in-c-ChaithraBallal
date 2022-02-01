@@ -19,7 +19,7 @@ ColorData PrintColorMap_test(int majorID, int minorID)
     printf("%d | %s | %s\n", ((majorID * 5) + minorID + 1), majorColor[majorID], minorColor[minorID]);
     /*Copy the strings to their actual structure*/
      colormapping.PairNumber = ((majorID * 5) + minorID + 1);
-     strcpy(colormapping.majorColor, majorColor[2]); 
+     strcpy(colormapping.majorColor, "Black"); 
      strcpy(colormapping.minorColor, minorColor[minorID]);
      return colormapping;    
 }
