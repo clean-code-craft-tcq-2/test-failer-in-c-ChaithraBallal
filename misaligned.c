@@ -41,14 +41,14 @@ int printColorMap()
 int main() 
 {
     int result = printColorMap();
-    int MajorcolorIndex = 3;
-    int MinorcolorIndex = 4;
+    int MajorcolorIndex = 2;
+    int MinorcolorIndex = 3;
     assert(result == 25);
     ColorData colormap;
     colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
-    assert(colormap.PairNumber == 20);
-    assert(strcmp(colormap.minorColor,"Slate") == 0);
-    assert(strcmp(colormap.majorColor,"Yellow") == 0);
+    assert(colormap.PairNumber == 14);
+    assert(strcmp(colormap.minorColor,"Brown") == 0);
+    assert(strcmp(colormap.majorColor,"Black") == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
