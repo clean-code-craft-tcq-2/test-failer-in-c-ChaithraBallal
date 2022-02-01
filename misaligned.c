@@ -37,21 +37,6 @@ int printColorMap()
     return i * j;
 }
 
-/*void PrintColorMap_test(int a, int b)
-{
-    PrintColorMap_main(a,b);
-    colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
-}
-
-ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
-{
-     ColorData colormapping;
-     colormapping.PairNumber = Pairnum;
-     strcpy(colormapping.majorColor,Major_color); 
-     strcpy(colormapping.minorColor,Minor_color);
-     return colormapping;    
-}*/
-
 /* Testing environment */
 int main() 
 {
