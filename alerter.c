@@ -21,7 +21,7 @@ int networkAlert(float celcius)
 
 float alertInCelcius_main(float farenheit) 
 {
-    float celcius_test = (farenheit - 32) * 5 / 9;
+    float celcius = (farenheit - 32) * 5 / 9;
     return celcius;
 }
 /*Code under test*/
