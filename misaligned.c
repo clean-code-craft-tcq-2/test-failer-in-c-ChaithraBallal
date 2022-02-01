@@ -8,8 +8,8 @@
  typedef struct
  {
      int PairNumber;
-     char majorColor[5];
-     char minorColor[5];     
+     char majorColor[6];
+     char minorColor[6];     
  }ColorData;
 
 /*Code under test*/
