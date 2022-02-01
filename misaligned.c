@@ -47,8 +47,8 @@ int main()
     ColorData colormap;
     colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
     assert(colormap.PairNumber == 14);
-    assert(strcmp(colormap.majorColor,"Black") == 0);
     assert(strcmp(colormap.minorColor,"Brown") == 0);
+    assert(strcmp(colormap.majorColor,"Black") == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
