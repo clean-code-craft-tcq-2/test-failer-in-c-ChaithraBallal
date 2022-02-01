@@ -19,30 +19,47 @@ int printColorMap()
     {
         for(j = 0; j < 5; j++) 
         {
-           printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+           PrintColorMap_test(i,j);
         }
     }
     return i * j;
 }
 
-ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
+ColorData PrintColorMap_test(int p, int q)
 {
-     ColorData colormapping;
-     /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = Pairnum;
-     strcpy(colormapping.majorColor,Major_color); 
-     strcpy(colormapping.minorColor,Minor_color);
+    ColorData colormapping;
+    printf("%d | %s | %s\n", p * 5 + q, majorColor[p], minorColor[p]);
+    /*Copy the strings to their actual structure*/
+     colormapping.PairNumber = p * 5 + q;
+     strcpy(colormapping.majorColor,majorColor[p]); 
+     strcpy(colormapping.minorColor,minorColor[p]);
      return colormapping;    
 }
+
+//void PrintColorMap_test(int a, int b)
+//{
+   // PrintColorMap_main(a,b);
+   // colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
+//}
+
+//ColorData TestPrintColorData(int Pairnum, const char* Major_color, const char* Minor_color)
+//{
+     //ColorData colormapping;
+     /*Copy the strings to their actual structure*/
+     //colormapping.PairNumber = Pairnum;
+     //strcpy(colormapping.majorColor,Major_color); 
+     //strcpy(colormapping.minorColor,Minor_color);
+     //return colormapping;    
+//}
 /* Testing environment */
 int main() 
 {
     int result = printColorMap();
     int MajorcolorIndex = 2;
     int MinorcolorIndex = 4;
-    ColorData colormap;
     assert(result == 25);
-    colormap = TestPrintColorData(MajorcolorIndex*5 + MinorcolorIndex , majorColor[MajorcolorIndex], minorColor[MinorcolorIndex] );
+    ColorData colormap;
+    colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
     assert(colormap.PairNumber == 14);
     assert(strcmp(colormap.majorColor,"Black") == 0);
     assert(strcmp(colormap.minorColor,"Brown") == 0);
