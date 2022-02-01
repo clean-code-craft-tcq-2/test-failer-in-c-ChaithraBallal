@@ -8,17 +8,17 @@
  typedef struct
  {
      int PairNumber;
-     char majorColor[5];
-     char minorColor[5];     
+     char majorColor[8];
+     char minorColor[8];     
  }ColorData;
 
 /*Code under test*/
 ColorData PrintColorMap_test(int majorID, int minorID)
 {
     ColorData colormapping;
-    printf("%d | %s | %s\n", (majorID * 5) + minorID, majorColor[majorID], minorColor[minorID]);
+    printf("%d | %s | %s\n", (majorID * 5) + minorID + 1, majorColor[majorID], minorColor[minorID]);
     /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = (majorID * 5) + minorID ;
+     colormapping.PairNumber = (majorID * 5) + minorID + 1 ;
      strcpy(colormapping.majorColor, majorColor[majorID]); 
      strcpy(colormapping.minorColor, minorColor[minorID]);
      return colormapping;    
