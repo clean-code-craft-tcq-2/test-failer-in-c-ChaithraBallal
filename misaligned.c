@@ -13,14 +13,14 @@
  }ColorData;
 
 /*Code under test*/
-ColorData PrintColorMap_test(int p, int q)
+ColorData PrintColorMap_test(int majorID, int minorID)
 {
     ColorData colormapping;
-    printf("%d | %s | %s\n", ((p * 5) + q + 1), majorColor[p], minorColor[q]);
+    printf("%d | %s | %s\n", ((majorID * 5) + minorID + 1), majorColor[majorID], minorColor[minorID]);
     /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = ((p * 5) + q + 1);
-     strcpy(colormapping.majorColor,majorColor[p]); 
-     strcpy(colormapping.minorColor,minorColor[q]);
+     colormapping.PairNumber = ((majorID * 5) + minorID + 1);
+     strcpy(colormapping.majorColor,majorColor[majorID]); 
+     strcpy(colormapping.minorColor,minorColor[minorID]);
      return colormapping;    
 }
 
