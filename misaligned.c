@@ -20,7 +20,7 @@ ColorData PrintColorMap_test(int p, int q)
     /*Copy the strings to their actual structure*/
      colormapping.PairNumber = ((p * 5) + q + 1);
      strcpy(colormapping.majorColor,majorColor[p]); 
-     strcpy(colormapping.minorColor,minorColor[p]);
+     strcpy(colormapping.minorColor,minorColor[q]);
      return colormapping;    
 }
 
