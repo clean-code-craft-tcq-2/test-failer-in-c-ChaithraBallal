@@ -16,9 +16,9 @@
 ColorData PrintColorMap_test(int p, int q)
 {
     ColorData colormapping;
-    printf("%d | %s | %s\n", ((p * 5) + q), majorColor[p], minorColor[q-1]);
+    printf("%d | %s | %s\n", ((p * 5) + q + 1), majorColor[p], minorColor[q]);
     /*Copy the strings to their actual structure*/
-     colormapping.PairNumber = ((p * 5) + q);
+     colormapping.PairNumber = ((p * 5) + q + 1);
      strcpy(colormapping.majorColor,majorColor[p]); 
      strcpy(colormapping.minorColor,minorColor[p]);
      return colormapping;    
@@ -46,8 +46,8 @@ int main()
     assert(result == 25);
     ColorData colormap;
     colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
-    assert(colormap.PairNumber == 14);
-    assert(strcmp(colormap.minorColor,"Brown") == 0);
+    assert(colormap.PairNumber == 15);
+    assert(strcmp(colormap.minorColor,"Slate") == 0);
     assert(strcmp(colormap.majorColor,"Black") == 0);
     printf("All is well (maybe!)\n");
     return 0;
