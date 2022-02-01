@@ -46,7 +46,7 @@ int main()
     assert(result == 25);
     ColorData colormap;
     colormap = PrintColorMap_test(MajorcolorIndex,MinorcolorIndex);
-    assert(colormap.PairNumber == 19);
+    assert(colormap.PairNumber == 20);
     assert(strcmp(colormap.minorColor,"Slate") == 0);
     assert(strcmp(colormap.majorColor,"Yellow") == 0);
     printf("All is well (maybe!)\n");
